@@ -21,16 +21,17 @@ h3,
 h4,
 h5{
     font-weight: 600;
-    text-transform: uppercase;
     color: rgba(66, 66, 66, 1);
 }
 
 h1{
     font-size: 2.75rem;
+    line-height: 3rem;
 }
 
 h2{
     font-size: 2.5rem;
+    line-height: 2.75rem;
     text-align: center;
 }
 
@@ -47,14 +48,17 @@ h2::after{
 
 h3{
     font-size: 2.25rem;
+    line-height: 2.5rem;
 }
 
 h4{
     font-size: 2rem;
+    line-height: 2.25rem;
 }
 
 h5{
     font-size: 1.75rem;
+    line-height: 2rem;
 }
 
 ul{
@@ -67,10 +71,27 @@ header,
 section{
     width: calc(100% - 4rem);
     padding: 2rem;
-    float: left;
+    display: flex;
+    flex-direction: column;
 }
 
 /* || UTILITIES */
+
+.d-flex{
+    display: flex;
+}
+
+.flex-column{
+    flex-direction: column;   
+}
+
+.align-center{
+    align-items: center;  
+}
+
+.justify-center{
+    justify-content: center;
+}
 
 .bulleted{
     list-style: circle;
@@ -78,4 +99,54 @@ section{
 
 /* || LAYOUT */
 
-/* || SPECIFIC STYLES */
+/* header */
+
+header nav{
+    align-self: flex-end;
+}
+
+header nav ul li{
+    display: inline-block;
+}
+
+/* about section */
+
+.about{
+    text-align: center;
+}
+
+.about ul{
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 0;
+    border-top: 1px solid black;
+}
+
+.about ul li{
+    display: inline-block;
+    margin: 0 1rem;
+}
+
+/* work section */
+
+.positions > li{
+    padding: 2rem 0;
+    border-bottom: 1px solid black;
+}
+
+.positions > li:last-child{
+    border-bottom: 0;
+}
+
+.stack{
+    text-align: center;
+}
+
+.stack li{
+    display: inline-block;
+    width: 25%;
+}
+
+.stack li img{
+    width: 100%;
+}
