@@ -162,7 +162,33 @@ header{
 nav{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+}
+
+.fixed{
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn{
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(237, 123, 50, 1);
+    padding: .25rem 1.25rem;
+    border-radius: 30px;
+    font-family: 'KhandRegular';
+    font-size: 1rem;
+    margin-left: 20px;
+}
+
+.btn:hover,
+.btn:active,
+.btn:focus{
+    background-color: white;
+    color: rgba(237, 123, 50, 1);
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+    transition: all .2s;
 }
 
 .hamburger{
@@ -297,10 +323,12 @@ nav ul li a{
 }
 
 .tags li{
-    padding: 0 .5rem;
+    padding: 0 .75rem;
     border-radius: 20px;
     font-size: .75rem;
     color: white;
+    text-transform: uppercase;
+    font-weight: bold;
 }
 
 .tags li.upgrade{
