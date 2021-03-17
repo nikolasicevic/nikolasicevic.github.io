@@ -131,6 +131,18 @@ i{
     list-style: circle;
 }
 
+.mb-sm{
+    margin-bottom: 1rem;
+}
+
+.mb-md{
+    margin-bottom: 2rem;
+}
+
+.mb-lg{
+    margin-bottom: 3rem;
+}
+
 /* || LAYOUT */
 
 /* header & navigation */
@@ -231,12 +243,6 @@ nav ul li a{
     border-bottom: 0;
 }
 
-.position,
-.responsibilities,
-.projects{
-    margin-bottom: 3rem;
-}
-
 .position{
     display: flex;
     flex-direction: column;
@@ -265,6 +271,7 @@ nav ul li a{
 }
 
 .name{
+    font-size: 1.75rem;
     font-weight: bold;
     color: rgba(237, 123, 50, 1);
 }
