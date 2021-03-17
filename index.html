@@ -16,10 +16,14 @@
 </head>
 <body>
     <header>
-        <div>
-            <img src="" />
+        <div class="fixed">
+            <div id="hamburger" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-        <nav>
+        <nav id="nav">
             <ul>
                 <li><a href="#about">About</a></li>
                 <li><a href="#work">Work</a></li>
@@ -406,5 +410,28 @@
             </ul>
         </section>
     </main>
+    <script type="text/javascript">
+        // elements involved in displaying navigation on mobile 
+        var hamburger = document.getElementById('hamburger');
+        var nav = document.getElementById('nav');
+        var navList = nav.getElementsByTagName('ul')[0];
+
+        // initial state of navigation for mobile phones
+        var navOpened = false;
+
+        hamburger.onclick = function(event) {
+            if (navOpened) {
+                nav.style.height = '0';
+                navList.style.display = 'none';
+
+                navOpened = false;
+            } else {
+                nav.style.height = 'calc(100vh - 63px)';
+                navList.style.display = 'block';
+
+                navOpened = true;
+            }
+        }
+    </script>
 </body>
 </html>
