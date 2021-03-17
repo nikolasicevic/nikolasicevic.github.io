@@ -1,6 +1,16 @@
 /* || FONTS */
 
 @font-face{
+    font-family: "KhandRegular";
+    src: url("../fonts/Khand/Khand-Regular.ttf");
+}
+
+@font-face{
+    font-family: "MontserratRegular";
+    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face{
     font-family: "RobotoThin";
     src: url("../fonts/Roboto/Roboto-Thin.ttf");
 }
@@ -10,8 +20,8 @@
 body{
     margin: 0;
     padding: 0;
-    font-size: 1.5rem;
-    line-height: 2.25rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem;
     font-family: "RobotoThin";
 }
 
@@ -20,13 +30,17 @@ h2,
 h3,
 h4,
 h5{
+    margin: 0;
     font-weight: 600;
     color: rgba(66, 66, 66, 1);
 }
 
 h1{
-    font-size: 2.75rem;
-    line-height: 3rem;
+    font-size: 3.25rem;
+    line-height: 3.5rem;
+    font-family: 'KhandRegular';
+    font-weight: 500;
+    margin-bottom: 1rem;
 }
 
 h2{
@@ -47,18 +61,24 @@ h2::after{
 }
 
 h3{
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-}
-
-h4{
     font-size: 2rem;
     line-height: 2.25rem;
 }
 
+h4{
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
 h5{
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     line-height: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+p{
+    margin: 1.25rem 0;
 }
 
 ul{
@@ -69,6 +89,7 @@ ul{
 
 section{
     width: calc(100% - 4rem);
+    margin-top: 63px;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -82,6 +103,10 @@ a:hover
 a:focus
 a:active{
     text-decoration: underline;
+}
+
+i{
+    margin-right: 10px;
 }
 
 /* || UTILITIES */
@@ -107,6 +132,8 @@ a:active{
 }
 
 /* || LAYOUT */
+
+/* header & navigation */
 
 header{
     position: fixed;
@@ -167,19 +194,30 @@ nav ul li a{
 /* about section */
 
 .about{
+    height: calc(100vh - 63px - 4rem);
+    align-items: center;
     text-align: center;
+    justify-content: center;
+}
+
+.about p{
+    margin-bottom: 2rem;
 }
 
 .about ul{
     width: fit-content;
     margin: 0 auto;
-    padding: 1rem 0;
+    padding: 2rem 0;
     border-top: 1px solid black;
 }
 
 .about ul li{
     display: inline-block;
     margin: 0 1rem;
+}
+
+.about ul li a{
+    color: rgba(237, 123, 50, 1);
 }
 
 /* work section */
@@ -193,16 +231,80 @@ nav ul li a{
     border-bottom: 0;
 }
 
-.stack{
+.position,
+.responsibilities,
+.projects{
+    margin-bottom: 3rem;
+}
+
+.position{
+    display: flex;
+    flex-direction: column;
+}
+
+.position h3{
+    color: rgba(237, 123, 50, 1);
+}
+
+.position a::after{
+    content: "";
+    display: block;
+    width: 70%;
+    height: 1px;
+    margin: .5rem auto;
+    background-color: rgba(237, 123, 50, 1);
+}
+
+.position span{
+    font-size: 1rem;
+    align-self: flex-end;
+}
+
+.responsibilities ul li{
+    margin: .5rem 0;
+}
+
+.name{
+    font-weight: bold;
+    color: rgba(237, 123, 50, 1);
+}
+
+.tags{
     display: flex;
     width: 100%;
-    text-align: center;
+}
+
+.tags li{
+    margin: .5rem;
+    padding: .05rem .75rem;
+    border-radius: 20px;
+    font-size: .75rem;
+    color: white;
+}
+
+.tags li.upgrade{
+    background-color: rgba(124, 235, 128, 1);  
+}
+
+.tags li.inactive{
+    background-color: rgba(255, 74, 46, 1); 
+}
+
+.tags li.unavailable{
+    background-color: rgba(143, 143, 143, 1);
+}
+
+.stack{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }
 
 .stack li{
     display: inline-flex;
-    width: 25%;
-    padding: 0 .5rem;
+    width: calc(33.33% - 1rem);
+    padding: 1rem .5rem;
     align-items: center;
     justify-content: center;
 }
