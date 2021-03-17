@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="fixed">
-            <div id="hamburger" class="hamburger">
+            <div id="hamburger" class="hamburger" onclick='toggleNav()'>
                 <span></span>
                 <span></span>
                 <span></span>
@@ -25,11 +25,11 @@
         </div>
         <nav id="nav">
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#work">Work</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#edu">Education</a></li>
-                <li><a href="#intersests">Interests</a></li>
+                <li><a href="#about" onclick='toggleNav()'>About</a></li>
+                <li><a href="#work" onclick='toggleNav()'>Work</a></li>
+                <li><a href="#skills" onclick='toggleNav()'>Skills</a></li>
+                <li><a href="#edu" onclick='toggleNav()'>Education</a></li>
+                <li><a href="#intersests" onclick='toggleNav()'>Interests</a></li>
             </ul>
         </nav>
     </header>
@@ -435,24 +435,20 @@
         var hamburger = document.getElementById('hamburger');
         var nav = document.getElementById('nav');
         var navList = nav.getElementsByTagName('ul')[0];
+        var navItems = nav.getElementsByClassName('nav-item');
 
         // initial state of navigation for mobile phones
         var navOpened = false;
 
-        function toggleNav(height, display) {
-            nav.style.height = height;
-            navList.style.display = display;
-        }
-
-        hamburger.onclick = function(event) {
+        function toggleNav() {
             if (navOpened) {
-                activeHeight = NAV_HEIGHT_CLOSED;
-                activeDisplay = LIST_DISPLAY_CLOSED;
+                nav.style.height = NAV_HEIGHT_CLOSED;
+                navList.style.display = LIST_DISPLAY_CLOSED;
 
                 navOpened = false;
             } else {
-                activeHeight = NAV_HEIGHT_OPENED;
-                activeDisplay = LIST_DISPLAY_OPENED;
+                nav.style.height = NAV_HEIGHT_OPENED;
+                navList.style.display = LIST_DISPLAY_OPENED;
 
                 navOpened = true;
             }
