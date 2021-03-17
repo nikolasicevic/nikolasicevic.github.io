@@ -411,6 +411,14 @@
         </section>
     </main>
     <script type="text/javascript">
+        // NAVIGATION TOGGLE FEATURE 
+
+        // property values for different states of navigation
+        const NAV_HEIGHT_OPENED = 'calc(100vh - 63px)';
+        const NAV_HEIGHT_CLOSED = '0';
+        const LIST_DISPLAY_OPENED = 'block';
+        const LIST_DISPLAY_CLOSED = 'none';
+
         // elements involved in displaying navigation on mobile 
         var hamburger = document.getElementById('hamburger');
         var nav = document.getElementById('nav');
@@ -419,18 +427,25 @@
         // initial state of navigation for mobile phones
         var navOpened = false;
 
+        function toggleNav(height, display) {
+            nav.style.height = height;
+            navList.style.display = display;
+        }
+
         hamburger.onclick = function(event) {
             if (navOpened) {
-                nav.style.height = '0';
-                navList.style.display = 'none';
+                activeHeight = NAV_HEIGHT_CLOSED;
+                activeDisplay = LIST_DISPLAY_CLOSED;
 
                 navOpened = false;
             } else {
-                nav.style.height = 'calc(100vh - 63px)';
-                navList.style.display = 'block';
+                activeHeight = NAV_HEIGHT_OPENED;
+                activeDisplay = LIST_DISPLAY_OPENED;
 
                 navOpened = true;
             }
+
+            toggleNav(activeHeight, activeDisplay);
         }
     </script>
 </body>
