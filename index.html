@@ -132,7 +132,7 @@
                         <ul class="mb-md">
                             <li>
                                 <!-- remove link but use same class for project with links -->
-                                <a href="#" class="name">CASSIE</a>
+                                <span class="name">CASSIE</span>
                                 <ul class="tags">
                                     <li class="unavailable">unavailable</li>
                                 </ul>
@@ -203,7 +203,7 @@
                         <ul class="mb-md">
                             <li>
                                 <!-- remove link but use same class for project with links -->
-                                <a href="#" target="_blank" class="name">Online school</a>
+                                <span class="name">Online school</span>
                                 <ul class="tags">
                                     <li class="inactive">inactive</li>
                                 </ul>
@@ -240,7 +240,13 @@
                                 <!-- remove link but use same class for project with links -->
                                 <a href="https://www.apotekasrbotrade.rs/" target="_blank" class="name">Srbotrade Pharmacy</a>
                                 <ul class="tags">
-                                    <li class="upgrade">upgraded</li>
+                                    <li class="upgrade">
+                                        upgraded
+                                        <div class="note">
+                                            <span class="triangle"></span>
+                                            Project has been upgraded since my involvement.
+                                        </div>
+                                    </li>
                                 </ul>
                                 <p>Online presentation.</p>
                                 <h5><i class="fas fa-cubes"></i>Stack</h5>
@@ -281,7 +287,7 @@
                             </li>
                             <li>
                                 <!-- remove link but use same class for project with links -->
-                                <a href="#" target="_blank" class="name">Roblack</a>
+                                <span class="name">Roblack</span>
                                 <ul class="tags">
                                     <li class="inactive">inactive</li>
                                 </ul>
@@ -424,39 +430,6 @@
             </ul>
         </section>
     </main>
-    <script type="text/javascript">
-        // NAVIGATION TOGGLE FEATURE 
-
-        // property values for different states of navigation
-        const NAV_HEIGHT_OPENED = 'calc(100vh - 63px)';
-        const NAV_HEIGHT_CLOSED = '0';
-        const LIST_DISPLAY_OPENED = 'block';
-        const LIST_DISPLAY_CLOSED = 'none';
-
-        // elements involved in displaying navigation on mobile 
-        var hamburger = document.getElementById('hamburger');
-        var nav = document.getElementById('nav');
-        var navList = nav.getElementsByTagName('ul')[0];
-        var navItems = nav.getElementsByClassName('nav-item');
-
-        // initial state of navigation for mobile phones
-        var navOpened = false;
-
-        function toggleNav() {
-            if (navOpened) {
-                nav.style.height = NAV_HEIGHT_CLOSED;
-                navList.style.display = LIST_DISPLAY_CLOSED;
-
-                navOpened = false;
-            } else {
-                nav.style.height = NAV_HEIGHT_OPENED;
-                navList.style.display = LIST_DISPLAY_OPENED;
-
-                navOpened = true;
-            }
-
-            toggleNav(activeHeight, activeDisplay);
-        }
-    </script>
+    <script type="text/javascript" src="js/app.js"></script>
 </body>
 </html>
